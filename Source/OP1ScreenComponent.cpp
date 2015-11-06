@@ -60,7 +60,7 @@ void OP1ScreenComponent::paint (Graphics& g)
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colours::white);
+    g.fillAll (Colours::black);
 
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
@@ -93,8 +93,8 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="OP1ScreenComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="0" initialWidth="320" initialHeight="160">
-  <BACKGROUND backgroundColour="ffffffff"/>
+                 fixedSize="1" initialWidth="320" initialHeight="160">
+  <BACKGROUND backgroundColour="ff000000"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

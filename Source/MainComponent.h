@@ -22,6 +22,8 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "JuceHeader.h"
+
+#include "OP1ScreenComponent.h"
 //[/Headers]
 
 
@@ -34,7 +36,8 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class MainContentComponent  : public Component
+class MainContentComponent  : public Component,
+                              public ButtonListener
 {
 public:
     //==============================================================================
@@ -47,6 +50,7 @@ public:
 
     void paint (Graphics& g);
     void resized();
+    void buttonClicked (Button* buttonThatWasClicked);
     void filesDropped (const StringArray& filenames, int mouseX, int mouseY);
     void mouseMove (const MouseEvent& e);
     void mouseEnter (const MouseEvent& e);
@@ -59,8 +63,16 @@ public:
     bool keyStateChanged (const bool isKeyDown);
 
     // Binary resources:
-    static const char* op1_color_800_png;
-    static const int op1_color_800_pngSize;
+    static const char* body_color_1024_png;
+    static const int body_color_1024_pngSize;
+    static const char* button_key_white_png;
+    static const int button_key_white_pngSize;
+    static const char* button_key_black_left_png;
+    static const int button_key_black_left_pngSize;
+    static const char* button_key_black_center_png;
+    static const int button_key_black_center_pngSize;
+    static const char* button_key_black_right_png;
+    static const int button_key_black_right_pngSize;
 
 
 private:
@@ -69,7 +81,31 @@ private:
 
     //==============================================================================
     ScopedPointer<OP1ScreenComponent> screen;
-    Image cachedImage_op1_color_800_png_1;
+    ScopedPointer<ImageButton> key_white_0;
+    ScopedPointer<ImageButton> key_white_1;
+    ScopedPointer<ImageButton> key_white_2;
+    ScopedPointer<ImageButton> key_white_3;
+    ScopedPointer<ImageButton> key_white_4;
+    ScopedPointer<ImageButton> key_white_5;
+    ScopedPointer<ImageButton> key_white_6;
+    ScopedPointer<ImageButton> key_white_7;
+    ScopedPointer<ImageButton> key_white_8;
+    ScopedPointer<ImageButton> key_white_9;
+    ScopedPointer<ImageButton> key_white_10;
+    ScopedPointer<ImageButton> key_white_11;
+    ScopedPointer<ImageButton> key_white_12;
+    ScopedPointer<ImageButton> key_white_13;
+    ScopedPointer<ImageButton> key_black_0;
+    ScopedPointer<ImageButton> key_black_2;
+    ScopedPointer<ImageButton> key_black_3;
+    ScopedPointer<ImageButton> key_black_4;
+    ScopedPointer<ImageButton> key_black_1;
+    ScopedPointer<ImageButton> key_black_6;
+    ScopedPointer<ImageButton> key_black_5;
+    ScopedPointer<ImageButton> key_black_7;
+    ScopedPointer<ImageButton> key_black_8;
+    ScopedPointer<ImageButton> key_black_9;
+    Image cachedImage_body_color_1024_png_1;
 
 
     //==============================================================================
