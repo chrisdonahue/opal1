@@ -49,6 +49,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/OP1ScreenComponent_663fca4a.o \
   $(OBJDIR)/MainComponent_a6ffb4a5.o \
   $(OBJDIR)/Main_90ebc5c2.o \
   $(OBJDIR)/juce_audio_basics_181b4cb.o \
@@ -81,6 +82,11 @@ clean:
 strip:
 	@echo Stripping opal1
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/OP1ScreenComponent_663fca4a.o: ../../Source/OP1ScreenComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling OP1ScreenComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/MainComponent_a6ffb4a5.o: ../../Source/MainComponent.cpp
 	-@mkdir -p $(OBJDIR)

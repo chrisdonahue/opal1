@@ -47,7 +47,20 @@ public:
 
     void paint (Graphics& g);
     void resized();
+    void filesDropped (const StringArray& filenames, int mouseX, int mouseY);
+    void mouseMove (const MouseEvent& e);
+    void mouseEnter (const MouseEvent& e);
+    void mouseExit (const MouseEvent& e);
+    void mouseDown (const MouseEvent& e);
+    void mouseDrag (const MouseEvent& e);
+    void mouseUp (const MouseEvent& e);
+    void mouseDoubleClick (const MouseEvent& e);
+    bool keyPressed (const KeyPress& key);
+    bool keyStateChanged (const bool isKeyDown);
 
+    // Binary resources:
+    static const char* op1_color_800_png;
+    static const int op1_color_800_pngSize;
 
 
 private:
@@ -55,6 +68,8 @@ private:
     //[/UserVariables]
 
     //==============================================================================
+    ScopedPointer<OP1ScreenComponent> screen;
+    Image cachedImage_op1_color_800_png_1;
 
 
     //==============================================================================
